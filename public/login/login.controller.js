@@ -1,5 +1,5 @@
 angular.module('angularJWT')
-.controller('login', function ($scope, $http){
+.controller('login', function ($scope, $http, $location){
    $scope.create = function(){
       const user = {
          username: $scope.username,
@@ -7,7 +7,9 @@ angular.module('angularJWT')
       }
       $http.post('/users/create', user)
          .then(function(result){
-            console.log(result)
+            localStorage.setItem('user', JSON.stringify(result.data))
+
+            $location.path('/dashboard')
          })
          .catch(function(err){
             console.error('There was an error', err)

@@ -5,4 +5,9 @@ angular.module('angularJWT', ['ngRoute'])
          templateUrl: '/login/login.template.html', //not the actual route, helps naming convention, goes to folder, login
          controller: 'login'
       })
+      .when('/dashboard', {
+         // templateUrl: '/login/login.template.html', //not the actual route, helps naming convention, goes to folder, login
+         // controller: 'login'
+         template: '<h1>Hey hey hey</h1>'
+      })
 })
